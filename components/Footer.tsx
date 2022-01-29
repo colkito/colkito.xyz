@@ -59,7 +59,13 @@ export default function Footer() {
         align={{ base: 'center', md: 'center' }}
       >
         <HStack marginTop="2" spacing="2" display="flex" alignItems="center">
-          <Text>~ Decentralize all the thinks ~</Text>
+          <Text
+            bgGradient="linear(to-l, #7928CA, #FF0080)"
+            bgClip="text"
+            fontWeight={'bold'}
+          >
+            ~ Decentralize all the thinks ~
+          </Text>
         </HStack>
         <Stack direction="row" spacing="6">
           <SocialButton label="Twitter" href="https://twitter.com/colkitoxyz">

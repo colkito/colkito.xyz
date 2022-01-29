@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react'
 import {
   Box,
-  // Flex,
   Button,
   useColorModeValue,
   Stack,
@@ -105,11 +104,9 @@ export default function Navbar() {
         </Container>
 
         {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
+          <Box pb={4} px={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
-              <Link px={2} py={1} href="/">
-                Home
-              </Link>
+              <NavLink href="/">🌎 Home</NavLink>
               {Links.map((link) => (
                 <NavLink key={link.label} href={link.href}>
                   {link.label}
