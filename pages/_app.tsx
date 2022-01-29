@@ -1,11 +1,29 @@
 import '../styles/fonts.css'
-import '../styles/globals.css'
 
-import Layout from '@components/Layout'
+import Layout from '@/components/Layout'
 import type { AppProps } from 'next/app'
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+
+const fonts = {
+  heading: "'Texta Alt', sans-serif",
+  body: "'Texta Alt', sans-serif",
+}
+
+const colors = {
+  brand: {
+    900: '#1a365d',
+    800: '#153e75',
+    700: '#2a69ac',
+  },
+}
+
+const theme = extendTheme({
+  fonts,
+  colors,
+})
 
 function MyApp({ Component, pageProps }: AppProps) {
-  // Check the URL starts with 'http' protocol, and redirect to 'https' if needed
+  // Redirect 'http' to 'https' if needed
   if (typeof window !== 'undefined') {
     const httpTokens: string[] | null = /^http:\/\/(.*)$/.exec(
       window.location.href
@@ -18,9 +36,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   }
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <ChakraProvider theme={theme}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ChakraProvider>
   )
 }
 

@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import Footer from '@/components/Footer'
+import Navbar from '@/components/Navbar'
 
 const Layout: React.FC = ({ children }) => {
   return (
@@ -26,10 +28,7 @@ const Layout: React.FC = ({ children }) => {
         <meta name="theme-color" content="#059669" />
         <meta name="HandheldFriendly" content="true" />
 
-        <link
-          rel="icon"
-          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>"
-        />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <link
           rel="preload"
           href="/fonts/TextaAlt/TextaAlt-Regular.woff2"
@@ -38,9 +37,11 @@ const Layout: React.FC = ({ children }) => {
           crossOrigin="true"
         ></link>
 
-        <title>colkito.xyz</title>
+        <title>Mario Colque — colkito.xyz</title>
       </Head>
+      <Navbar />
       {children}
+      <Footer />
     </>
   )
 }
