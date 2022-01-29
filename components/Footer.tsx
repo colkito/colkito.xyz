@@ -47,7 +47,7 @@ export default function Footer() {
   return (
     <Box
       bg={useColorModeValue('gray.50', 'gray.900')}
-      color={useColorModeValue('gray.700', 'gray.200')}
+      color={useColorModeValue('gray.600', 'gray.400')}
     >
       <Container
         as={Stack}
@@ -59,12 +59,6 @@ export default function Footer() {
         align={{ base: 'center', md: 'center' }}
       >
         <HStack marginTop="2" spacing="2" display="flex" alignItems="center">
-          {/* <Image
-            borderRadius="full"
-            boxSize="30px"
-            src="/images/picture.jpg"
-            alt="Mario Colque"
-          /> */}
           <Text>🌱 colkito.xyz — Mario Colque</Text>
         </HStack>
         <Stack direction={'row'} spacing={6}>

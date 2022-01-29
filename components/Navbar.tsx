@@ -10,6 +10,7 @@ import {
   useDisclosure,
   HStack,
   Link,
+  Image,
 } from '@chakra-ui/react'
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
 
@@ -61,6 +62,14 @@ export default function Navbar() {
               spacing={4}
               display={{ base: 'none', md: 'flex' }}
             >
+              <Link href="/">
+                <Image
+                  borderRadius="full"
+                  boxSize="30px"
+                  src="/images/picture-rounded-32x32.png"
+                  alt="Mario Colque"
+                />
+              </Link>
               {Links.map((link) => (
                 <NavLink key={link.label} href={link.href}>
                   {link.label}
@@ -90,6 +99,9 @@ export default function Navbar() {
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
+              <Link px={2} py={1} href="/">
+                Home
+              </Link>
               {Links.map((link) => (
                 <NavLink key={link.label} href={link.href}>
                   {link.label}
