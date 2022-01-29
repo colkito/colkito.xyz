@@ -7,14 +7,8 @@ const withMDX = require('@next/mdx')({
 
 module.exports = withMDX({
   reactStrictMode: true,
+  trailingSlash: true,
+
   // Support MDX files as pages:
   pageExtensions: ['md', 'mdx', 'tsx', 'ts', 'jsx', 'js'],
 })
-
-// const withMDX = require('@next/mdx')({
-//   extension: /\.(md|mdx)$/,
-// })
-
-// module.exports = withMDX({
-//   reactStrictMode: true,
-// })
