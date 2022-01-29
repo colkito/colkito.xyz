@@ -59,16 +59,16 @@ export default function Footer() {
         align={{ base: 'center', md: 'center' }}
       >
         <HStack marginTop="2" spacing="2" display="flex" alignItems="center">
-          <Text>🌱 colkito.xyz — Mario Colque</Text>
+          <Text>~ Decentralize all the thinks ~</Text>
         </HStack>
-        <Stack direction={'row'} spacing={6}>
-          <SocialButton label={'Twitter'} href="https://twitter.com/colkitoxyz">
+        <Stack direction="row" spacing="6">
+          <SocialButton label="Twitter" href="https://twitter.com/colkitoxyz">
             <FaTwitter />
           </SocialButton>
-          <SocialButton label={'GitHub'} href={'https://github.com/colkito'}>
+          <SocialButton label="GitHub" href="https://github.com/colkito">
             <FaGithubAlt />
           </SocialButton>
-          <SocialButton label={'Contact'} href={'mailto:hi@colkito.xyz'}>
+          <SocialButton label="Contact" href="mailto:hi@colkito.xyz">
             <FaRegEnvelope />
           </SocialButton>
         </Stack>

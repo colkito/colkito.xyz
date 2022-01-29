@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import {
   Box,
-  Flex,
+  // Flex,
   Button,
   useColorModeValue,
   Stack,
@@ -11,6 +11,7 @@ import {
   HStack,
   Link,
   Image,
+  Container,
 } from '@chakra-ui/react'
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
 
@@ -46,8 +47,15 @@ export default function Navbar() {
 
   return (
     <>
-      <Box bg={'transparent'} px={4}>
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+      <Box bg={'transparent'} borderBottomWidth={1}>
+        <Container
+          as={Stack}
+          maxW={'6xl'}
+          py={4}
+          direction={'row'}
+          justify={'space-between'}
+          align={{ base: 'center', md: 'center' }}
+        >
           <IconButton
             size={'md'}
             bg={'transparent'}
@@ -56,6 +64,7 @@ export default function Navbar() {
             display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
           />
+
           <HStack spacing={8} alignItems={'center'}>
             <HStack
               as={'nav'}
@@ -78,24 +87,23 @@ export default function Navbar() {
             </HStack>
           </HStack>
 
-          <Flex alignItems={'center'}>
-            <Stack direction={'row'} spacing={7}>
-              <Button
-                px={2}
-                py={1}
-                rounded={'md'}
-                bg={'transparent'}
-                _hover={{
-                  textDecoration: 'none',
-                  bg: useColorModeValue('gray.200', 'gray.700'),
-                }}
-                onClick={toggleColorMode}
-              >
-                {colorMode === 'light' ? '🌒' : '☀️'}
-              </Button>
-            </Stack>
-          </Flex>
-        </Flex>
+          <Stack direction="row" spacing="6">
+            <Button
+              px={2}
+              py={1}
+              rounded={'md'}
+              bg={'transparent'}
+              _hover={{
+                textDecoration: 'none',
+                bg: useColorModeValue('gray.200', 'gray.700'),
+              }}
+              onClick={toggleColorMode}
+            >
+              {colorMode === 'light' ? '🌒' : '☀️'}
+            </Button>
+          </Stack>
+        </Container>
+
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
