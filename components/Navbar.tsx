@@ -1,10 +1,8 @@
 import type { ReactNode } from 'react'
 import {
   Box,
-  Button,
   useColorModeValue,
   Stack,
-  useColorMode,
   IconButton,
   useDisclosure,
   HStack,
@@ -41,12 +39,11 @@ const NavLink = (props: NavLinkProps) => (
 )
 
 export default function Navbar() {
-  const { colorMode, toggleColorMode } = useColorMode()
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <>
-      <Box bg={'transparent'} borderBottomWidth={1}>
+      <Box bg={'transparent'}>
         <Container
           as={Stack}
           maxW={'6xl'}
@@ -70,14 +67,6 @@ export default function Navbar() {
               spacing={4}
               display={{ base: 'none', md: 'flex' }}
             >
-              <Link href="/">
-                <Image
-                  borderRadius="full"
-                  boxSize="30px"
-                  src="/images/picture-rounded-32x32.png"
-                  alt="Mario Colque"
-                />
-              </Link>
               {Links.map((link) => (
                 <NavLink key={link.label} href={link.href}>
                   {link.label}
@@ -87,19 +76,14 @@ export default function Navbar() {
           </HStack>
 
           <Stack direction="row" spacing="6">
-            <Button
-              px={2}
-              py={1}
-              rounded={'md'}
-              bg={'transparent'}
-              _hover={{
-                textDecoration: 'none',
-                bg: useColorModeValue('gray.200', 'gray.700'),
-              }}
-              onClick={toggleColorMode}
-            >
-              {colorMode === 'light' ? '🌒' : '☀️'}
-            </Button>
+            <Link href="/">
+              <Image
+                borderRadius="full"
+                boxSize="30px"
+                src="/images/picture-rounded-32x32.png"
+                alt="Mario Colque"
+              />
+            </Link>
           </Stack>
         </Container>
 
