@@ -76,14 +76,12 @@ export default function Navbar() {
           </HStack>
 
           <Stack direction="row" spacing="6">
-            <Link href="/">
-              <Image
-                borderRadius="full"
-                boxSize="30px"
-                src="/images/picture-rounded-32x32.png"
-                alt="Mario Colque"
-              />
-            </Link>
+            <Image
+              borderRadius="full"
+              boxSize="30px"
+              src="/images/picture.jpg"
+              alt="Mario Colque"
+            />
           </Stack>
         </Container>
 
