@@ -1,4 +1,3 @@
-import type { ReactNode } from 'react'
 import {
   Box,
   useColorModeValue,
@@ -11,6 +10,7 @@ import {
   Container,
 } from '@chakra-ui/react'
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
+import type { ReactNode } from 'react'
 
 const Links = [
   { label: '☝️ Stories', href: '/stories' },
@@ -79,7 +79,7 @@ export default function Navbar() {
             <Image
               borderRadius="full"
               boxSize="30px"
-              src="/images/picture.jpg"
+              src="/assets/picture.jpg"
               alt="Mario Colque"
             />
           </Stack>

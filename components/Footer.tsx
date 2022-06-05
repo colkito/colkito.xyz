@@ -9,17 +9,15 @@ import {
   VisuallyHidden,
 } from '@chakra-ui/react'
 import { FaGithubAlt, FaRegEnvelope, FaTwitter } from 'react-icons/fa'
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
-const SocialButton = ({
-  children,
-  label,
-  href,
-}: {
+type SocialButtonProps = {
   children: ReactNode
   label: string
   href: string
-}) => {
+}
+
+const SocialButton = ({ children, label, href }: SocialButtonProps) => {
   return (
     <chakra.button
       bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}

@@ -1,8 +1,8 @@
 import '../styles/fonts.css'
 
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import Layout from '@/components/Layout'
 import type { AppProps } from 'next/app'
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const fonts = {
   heading: "'Texta Alt', sans-serif",
@@ -22,7 +22,7 @@ const theme = extendTheme({
   colors,
 })
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   // Redirect 'http' to 'https' if needed
   if (typeof window !== 'undefined') {
     const httpTokens: string[] | null = /^http:\/\/(.*)$/.exec(
@@ -43,5 +43,3 @@ function MyApp({ Component, pageProps }: AppProps) {
     </ChakraProvider>
   )
 }
-
-export default MyApp

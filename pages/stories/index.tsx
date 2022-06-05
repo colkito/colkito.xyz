@@ -1,7 +1,6 @@
 import { Container, Heading, Text } from '@chakra-ui/react'
-import type { NextPage } from 'next'
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
     <Container maxW="container.lg">
       <Heading>Stories</Heading>
@@ -17,5 +16,3 @@ const Home: NextPage = () => {
     </Container>
   )
 }
-
-export default Home

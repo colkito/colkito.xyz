@@ -1,8 +1,16 @@
-import { Container, Heading, Text } from '@chakra-ui/react'
-import type { NextPage } from 'next'
 import Link from 'next/link'
+import { Container, Heading, Text } from '@chakra-ui/react'
+import HeroPost from '@/components/HeroPost'
+import MoreStories from '@/components/MoreStories'
+import { getAllPosts } from '@/lib/api'
+import type { Post } from '@/lib/types'
 
-const Home: NextPage = () => {
+type HomeProps = {
+  heroPost: Post
+  morePosts: Post[]
+}
+
+export default function Home({ heroPost, morePosts }: HomeProps) {
   return (
     <Container>
       <Heading>
@@ -17,8 +25,37 @@ const Home: NextPage = () => {
         half was strewn with silver. Looking down into the dark gulf below, I
         could see a ruddy light streaming through a rift in the clouds.
       </Text>
+
+      {heroPost && (
+        <HeroPost
+          title={heroPost.title}
+          coverImage={heroPost.coverImage}
+          date={heroPost.date}
+          author={heroPost.author}
+          slug={heroPost.slug}
+          excerpt={heroPost.excerpt}
+        />
+      )}
+
+      {morePosts.length > 0 && <MoreStories posts={morePosts} />}
     </Container>
   )
 }
 
-export default Home
+export async function getStaticProps() {
+  const allPosts = getAllPosts([
+    'title',
+    'coverImage',
+    'date',
+    'author',
+    'slug',
+    'excerpt',
+  ])
+
+  const heroPost = allPosts[0]
+  const morePosts = allPosts.slice(1)
+
+  return {
+    props: { heroPost, morePosts },
+  }
+}
