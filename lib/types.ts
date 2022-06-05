@@ -5,12 +5,11 @@ type PostAuthor = {
 }
 
 export type Post = {
+  slug: string
   title: string
-  coverImage: string
   date: string
   author: PostAuthor
-  slug: string
-  excerpt: string
-  content?: string
-  ogImage?: string
+  content: string
+  coverImage: string
+  ogImage: string
 }

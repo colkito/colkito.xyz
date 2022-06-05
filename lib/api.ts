@@ -21,12 +21,13 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   const { data, content } = matter(fileContents)
 
   const post: Post = {
+    slug: '',
     title: '',
-    coverImage: '',
     date: '',
     author: defaultAuthor,
-    slug: '',
-    excerpt: '',
+    content: '',
+    coverImage: '',
+    ogImage: '',
   }
 
   // Ensure only the minimal needed data is exposed

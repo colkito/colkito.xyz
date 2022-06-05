@@ -28,12 +28,11 @@ export default function Home({ heroPost, morePosts }: HomeProps) {
 
       {heroPost && (
         <HeroPost
+          slug={heroPost.slug}
           title={heroPost.title}
-          coverImage={heroPost.coverImage}
           date={heroPost.date}
           author={heroPost.author}
-          slug={heroPost.slug}
-          excerpt={heroPost.excerpt}
+          coverImage={heroPost.coverImage}
         />
       )}
 

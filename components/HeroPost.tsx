@@ -1,20 +1,23 @@
 import type { Post } from '@/lib/types'
 
+type HeroPostProps = Pick<
+  Post,
+  'slug' | 'title' | 'date' | 'author' | 'coverImage'
+>
+
 export default function HeroPost({
+  slug,
   title,
-  coverImage,
   date,
   author,
-  slug,
-  excerpt,
-}: Post) {
+  coverImage,
+}: HeroPostProps) {
   console.log({
+    slug,
     title,
-    coverImage,
     date,
     author,
-    slug,
-    excerpt,
+    coverImage,
   })
   return <>Hero</>
 }
