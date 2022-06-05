@@ -8,7 +8,7 @@ const defaultAuthor = {
   picture: '/assets/picture.jpg',
 }
 
-const postsDirectory = join(process.cwd(), '_posts')
+const postsDirectory = join(process.cwd(), 'data/blog')
 
 export function getPostSlugs() {
   return fs.readdirSync(postsDirectory)
