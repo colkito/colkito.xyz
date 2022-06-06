@@ -1,12 +1,11 @@
 import Link from 'next/link'
-import Avatar from './Avatar'
 import CoverImage from './CoverImage'
 import DateFormatter from './DateFormatter'
 import type { Post } from '@/lib/types'
 
 type PostPreviewProps = Pick<
   Post,
-  'slug' | 'title' | 'coverImage' | 'date' | 'author' | 'excerpt'
+  'slug' | 'title' | 'coverImage' | 'date' | 'excerpt'
 >
 
 export default function PostPreview({
@@ -14,7 +13,6 @@ export default function PostPreview({
   title,
   coverImage,
   date,
-  author,
   excerpt,
 }: PostPreviewProps) {
   return (
@@ -37,7 +35,6 @@ export default function PostPreview({
         <DateFormatter dateString={date} />
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      <Avatar name={author.name} picture={author.picture} />
     </div>
   )
 }

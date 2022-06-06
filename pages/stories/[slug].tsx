@@ -26,7 +26,7 @@ export default function Post({ post }: PostProps) {
   return (
     <>
       <Head>
-        <title>{post.title} |</title>
+        <title>{post.title} | Mario Colque</title>
         <meta property="og:image" content={post.ogImage} />
       </Head>
       <Container>
@@ -35,7 +35,6 @@ export default function Post({ post }: PostProps) {
             title={post.title}
             coverImage={post.coverImage}
             date={post.date}
-            author={post.author}
           />
           <PostBody content={post.content} />
         </article>

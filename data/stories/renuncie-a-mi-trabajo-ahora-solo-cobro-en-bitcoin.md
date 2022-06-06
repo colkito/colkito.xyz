@@ -32,3 +32,7 @@ Creo que no hay que ver al Bitcoin como la amenaza, sino mas bien ver la oportun
 Un mensaje que me gustaría dejar hoy:
 
 > Sumate al bitcoin, da el paso, que podemos hacer de esto algo MUY bueno para todos.
+
+### Credits
+
+Photo by [Dmitry Demidko](https://unsplash.com/@wildbook) on [Unsplash](https://unsplash.com/s/photos/bitcoin)

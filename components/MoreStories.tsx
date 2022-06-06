@@ -19,7 +19,6 @@ export default function MoreStories({ posts }: MoreStoriesProps) {
             title={post.title}
             coverImage={post.coverImage}
             date={post.date}
-            author={post.author}
             excerpt={post.excerpt}
           />
         ))}
