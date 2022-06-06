@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Footer from '@/components/Footer'
-import Navbar from '@/components/Navbar'
 import type { ReactNode } from 'react'
 
 type LayoutProps = {
@@ -44,8 +43,11 @@ export default function Layout({ children }: LayoutProps) {
 
         <title>Mario Colque — colkito.xyz</title>
       </Head>
-      <Navbar />
-      {children}
+
+      <div className="min-h-screen">
+        <main>{children}</main>
+      </div>
+
       <Footer />
     </>
   )

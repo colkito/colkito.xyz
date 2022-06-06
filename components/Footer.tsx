@@ -1,73 +1,29 @@
-import {
-  Box,
-  chakra,
-  Container,
-  HStack,
-  Stack,
-  Text,
-  useColorModeValue,
-  VisuallyHidden,
-} from '@chakra-ui/react'
-import { FaGithubAlt, FaRegEnvelope, FaTwitter } from 'react-icons/fa'
-import type { ReactNode } from 'react'
-
-type SocialButtonProps = {
-  children: ReactNode
-  label: string
-  href: string
-}
-
-const SocialButton = ({ children, label, href }: SocialButtonProps) => {
-  return (
-    <chakra.button
-      bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
-      rounded={'full'}
-      w={8}
-      h={8}
-      cursor={'pointer'}
-      as={'a'}
-      href={href}
-      display={'inline-flex'}
-      alignItems={'center'}
-      justifyContent={'center'}
-      transition={'background 0.3s ease'}
-      _hover={{
-        bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
-      }}
-    >
-      <VisuallyHidden>{label}</VisuallyHidden>
-      {children}
-    </chakra.button>
-  )
-}
+import Container from './Container'
 
 export default function Footer() {
   return (
-    <Box bg={'transparent'}>
-      <Container
-        as={Stack}
-        maxW={'6xl'}
-        py={4}
-        direction={{ base: 'column', md: 'row' }}
-        spacing={4}
-        justify={{ base: 'center', md: 'space-between' }}
-        align={{ base: 'center', md: 'center' }}
-      >
-        <HStack marginTop="2" spacing="2" display="flex" alignItems="center">
-          <Text>colkito.xyz ~ Decentralize all the thinks ~</Text>
-        </HStack>
-        <Stack direction="row" spacing="6">
-          <SocialButton label="Twitter" href="https://twitter.com/colkitoxyz">
-            <FaTwitter />
-          </SocialButton>
-          <SocialButton label="GitHub" href="https://github.com/colkito">
-            <FaGithubAlt />
-          </SocialButton>
-          <SocialButton label="Contact" href="mailto:hi@colkito.xyz">
-            <FaRegEnvelope />
-          </SocialButton>
-        </Stack>
+    <footer className="bg-accent-1 border-t border-accent-2">
+      <Container>
+        <div className="py-28 flex flex-col lg:flex-row items-center">
+          <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
+            Statically Generated with Next.js.
+          </h3>
+          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
+            <a
+              href="https://nextjs.org/docs/basic-features/pages"
+              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
+            >
+              Read Documentation
+            </a>
+            <a
+              href="https://github.com/colkito"
+              className="mx-3 font-bold hover:underline"
+            >
+              View on GitHub
+            </a>
+          </div>
+        </div>
       </Container>
-    </Box>
+    </footer>
   )
 }

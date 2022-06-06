@@ -1,23 +1,49 @@
+import Link from 'next/link'
+import Avatar from './Avatar'
+import CoverImage from './CoverImage'
+import DateFormatter from './DateFormatter'
 import type { Post } from '@/lib/types'
 
 type HeroPostProps = Pick<
   Post,
-  'slug' | 'title' | 'date' | 'author' | 'coverImage'
+  'slug' | 'title' | 'coverImage' | 'date' | 'excerpt' | 'author'
 >
 
 export default function HeroPost({
-  slug,
   title,
-  date,
-  author,
   coverImage,
+  date,
+  excerpt,
+  author,
+  slug,
 }: HeroPostProps) {
-  console.log({
-    slug,
-    title,
-    date,
-    author,
-    coverImage,
-  })
-  return <>Hero</>
+  return (
+    <section>
+      <div className="mb-8 md:mb-16">
+        <CoverImage
+          title={title}
+          src={coverImage}
+          slug={slug}
+          height={620}
+          width={1240}
+        />
+      </div>
+      <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
+        <div>
+          <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
+            <Link href={`/stories/${slug}`}>
+              <a className="hover:underline">{title}</a>
+            </Link>
+          </h3>
+          <div className="mb-4 md:mb-0 text-lg">
+            <DateFormatter dateString={date} />
+          </div>
+        </div>
+        <div>
+          <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+          <Avatar name={author.name} picture={author.picture} />
+        </div>
+      </div>
+    </section>
+  )
 }

@@ -1,26 +1,13 @@
-import '../styles/fonts.css'
+// import '../styles/fonts.css'
+import '../styles/globals.css'
 
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import Layout from '@/components/Layout'
 import type { AppProps } from 'next/app'
 
-const fonts = {
-  heading: "'Texta Alt', sans-serif",
-  body: "'Texta Alt', sans-serif",
-}
-
-const colors = {
-  brand: {
-    900: '#1a365d',
-    800: '#153e75',
-    700: '#2a69ac',
-  },
-}
-
-const theme = extendTheme({
-  fonts,
-  colors,
-})
+// const fonts = {
+//   heading: "'Texta Alt', sans-serif",
+//   body: "'Texta Alt', sans-serif",
+// }
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   // Redirect 'http' to 'https' if needed
@@ -36,10 +23,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   }
 
   return (
-    <ChakraProvider theme={theme}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ChakraProvider>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   )
 }

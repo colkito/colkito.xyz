@@ -8,23 +8,25 @@ const defaultAuthor = {
   picture: '/assets/picture.jpg',
 }
 
-const postsDirectory = join(process.cwd(), 'data/blog')
+const storiesDir = join(process.cwd(), 'data/stories')
 
 export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory)
+  return fs.readdirSync(storiesDir)
 }
 
 export function getPostBySlug(slug: string, fields: string[] = []) {
   const realSlug = slug.replace(/\.md$/, '')
-  const fullPath = join(postsDirectory, `${realSlug}.md`)
+  const fullPath = join(storiesDir, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
 
+  // Default Post
   const post: Post = {
     slug: '',
     title: '',
     date: '',
     author: defaultAuthor,
+    excerpt: '',
     content: '',
     coverImage: '',
     ogImage: '',
@@ -40,7 +42,11 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
     }
     if (typeof data[field] !== 'undefined') {
       post[field] = data[field]
+    } else if (field === 'ogImage' && data['coverImage']) {
+      // Set coverImage (if exists) as ogImage by default
+      post.ogImage = data['coverImage']
     } else if (field === 'author') {
+      // Set default Author
       post.author = defaultAuthor
     }
   })
@@ -53,6 +59,8 @@ export function getAllPosts(fields: string[] = []) {
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
     // sort posts by date in descending order
-    .sort((post1: Post, post2: Post) => (post1.date > post2.date ? -1 : 1))
+    .sort((post1: Post, post2: Post) =>
+      new Date(post1.date) > new Date(post2.date) ? -1 : 1
+    )
   return posts
 }

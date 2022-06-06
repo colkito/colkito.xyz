@@ -1,7 +1,9 @@
-import { Container, Heading, Text } from '@chakra-ui/react'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import Container from '@/components/Container'
+import PostBody from '@/components/PostBody'
+import PostHeader from '@/components/PostHeader'
 import { getAllPosts, getPostBySlug } from '@/lib/api'
 import markdownToHtml from '@/lib/markdownToHtml'
 import type { Post } from '@/lib/types'
@@ -18,7 +20,7 @@ export default function Post({ post }: PostProps) {
   }
 
   if (router.isFallback) {
-    return <Text>Loading…</Text>
+    return <div>Loading…</div>
   }
 
   return (
@@ -27,16 +29,16 @@ export default function Post({ post }: PostProps) {
         <title>{post.title} |</title>
         <meta property="og:image" content={post.ogImage} />
       </Head>
-      <Container maxW="container.lg">
-        <Heading>{post.title}</Heading>
-        {/* // <PostHeader
-        //   title={post.title}
-        //   coverImage={post.coverImage}
-        //   date={post.date}
-        //   author={post.author}
-        // />
-        // <PostBody content={post.content} /> */}
-        <Text>{post.content}</Text>
+      <Container>
+        <article className="mb-32">
+          <PostHeader
+            title={post.title}
+            coverImage={post.coverImage}
+            date={post.date}
+            author={post.author}
+          />
+          <PostBody content={post.content} />
+        </article>
       </Container>
     </>
   )
