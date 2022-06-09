@@ -1,13 +1,8 @@
-// import '../styles/fonts.css'
+import '../styles/fonts.css'
 import '../styles/globals.css'
 
 import Layout from '@/components/Layout'
 import type { AppProps } from 'next/app'
-
-// const fonts = {
-//   heading: "'Texta Alt', sans-serif",
-//   body: "'Texta Alt', sans-serif",
-// }
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   // Redirect 'http' to 'https' if needed
