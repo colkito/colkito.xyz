@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Container from '@/components/Container'
 import PostBody from '@/components/PostBody'
+import PostFooter from '@/components/PostFooter'
 import PostHeader from '@/components/PostHeader'
 import { getAllPosts, getPostBySlug } from '@/lib/api'
 import markdownToHtml from '@/lib/markdownToHtml'
@@ -37,6 +38,7 @@ export default function Post({ post }: PostProps) {
             date={post.date}
           />
           <PostBody content={post.content} />
+          <PostFooter />
         </article>
       </Container>
     </>

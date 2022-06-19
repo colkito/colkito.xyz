@@ -13,7 +13,7 @@ export default function PostHeader({
   return (
     <>
       <PostTitle>{title}</PostTitle>
-      <div className="mb-6 text-lg">
+      <div className="mb-6 text-2xl">
         <DateFormatter dateString={date} />
       </div>
       <div className="mb-8 md:mb-16 sm:mx-0">
