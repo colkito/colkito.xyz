@@ -1,26 +1,32 @@
+import Link from 'next/link'
+import { FaGithubAlt, FaTwitter } from 'react-icons/fa'
+import { MdAlternateEmail } from 'react-icons/md'
 import Container from './Container'
 
 export default function Footer() {
   return (
-    <footer className="bg-accent-1 border-t border-accent-2">
+    <footer className="bg-gray-50 border-t border-accent-2">
       <Container>
         <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">
+          <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2 text-transparent bg-clip-text bg-gradient-to-br from-cyan-500 to-blue-500">
             Decentralize all the thinks.
           </h3>
-          <div className="flex flex-col lg:flex-row justify-center lg:justify-end items-center lg:pl-4 lg:w-1/2">
-            <a
-              href="https://nextjs.org/docs/basic-features/pages"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
-            >
-              Read Documentation
-            </a>
-            <a
-              href="https://github.com/colkito/colkito.xyz"
-              className="mx-3 font-bold hover:underline"
-            >
-              View on GitHub
-            </a>
+          <div className="flex lg:flex-row justify-center lg:justify-end items-center lg:pl-4 lg:w-1/2">
+            <Link href="https://twitter.com/colkitoxyz" target="_blank">
+              <a className="mx-3 p-4 text-lg rounded-full shadow text-blue-400 bg-white hover:bg-indigo-50">
+                <FaTwitter />
+              </a>
+            </Link>
+            <Link href="https://github.com/colkito" target="_blank">
+              <a className="mx-3 p-4 text-lg rounded-full shadow text-slate-700 bg-white hover:bg-indigo-50">
+                <FaGithubAlt />
+              </a>
+            </Link>
+            <Link href="mailto:hi@colkito.xyz" target="_blank">
+              <a className="mx-3 p-4 text-lg rounded-full shadow text-indigo-600 bg-white hover:bg-indigo-50">
+                <MdAlternateEmail />
+              </a>
+            </Link>
           </div>
         </div>
       </Container>
