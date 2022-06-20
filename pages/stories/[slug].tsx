@@ -31,7 +31,7 @@ export default function Post({ post }: PostProps) {
         <meta property="og:image" content={post.ogImage} />
       </Head>
       <Container>
-        <article className="mb-32">
+        <article>
           <PostHeader
             title={post.title}
             coverImage={post.coverImage}

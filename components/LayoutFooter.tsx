@@ -3,7 +3,7 @@ import { FaGithubAlt, FaTwitter } from 'react-icons/fa'
 import { MdAlternateEmail } from 'react-icons/md'
 import Container from './Container'
 
-export default function Footer() {
+export default function LayoutFooter() {
   return (
     <footer className="bg-gray-50 border-t border-accent-2">
       <Container>
@@ -13,17 +13,26 @@ export default function Footer() {
           </h3>
           <div className="flex lg:flex-row justify-center lg:justify-end items-center lg:pl-4 lg:w-1/2">
             <Link href="https://twitter.com/colkitoxyz" target="_blank">
-              <a className="mx-3 p-4 text-lg rounded-full shadow text-blue-400 bg-white hover:bg-indigo-50">
+              <a
+                className="mx-3 p-4 text-lg rounded-full shadow text-blue-400 bg-white hover:bg-indigo-50"
+                title="Follow me"
+              >
                 <FaTwitter />
               </a>
             </Link>
             <Link href="https://github.com/colkito" target="_blank">
-              <a className="mx-3 p-4 text-lg rounded-full shadow text-slate-700 bg-white hover:bg-indigo-50">
+              <a
+                className="mx-3 p-4 text-lg rounded-full shadow text-slate-700 bg-white hover:bg-indigo-50"
+                title="Check my repos"
+              >
                 <FaGithubAlt />
               </a>
             </Link>
             <Link href="mailto:hi@colkito.xyz" target="_blank">
-              <a className="mx-3 p-4 text-lg rounded-full shadow text-indigo-600 bg-white hover:bg-indigo-50">
+              <a
+                className="mx-3 p-4 text-lg rounded-full shadow text-indigo-600 bg-white hover:bg-indigo-50"
+                title="Send me an email"
+              >
                 <MdAlternateEmail />
               </a>
             </Link>
