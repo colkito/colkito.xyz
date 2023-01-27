@@ -3,7 +3,7 @@
   "description": "Decentralized Web",
   "version": "1.0.0",
   "private": true,
-  "author": "colkito <code@colkito.xyz>",
+  "author": "colkito <dev@colkito.xyz>",
   "repository": "git@github.com:colkito/colkito.xyz.git",
   "scripts": {
     "dev": "next dev",
