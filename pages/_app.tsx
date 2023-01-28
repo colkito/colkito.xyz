@@ -1,19 +1,15 @@
-import '../styles/fonts.css'
-import '../styles/globals.css'
+import Layout from '@/components/Layout';
+import '@/styles/globals.css';
+import type { AppProps } from 'next/app';
 
-import Layout from '@/components/Layout'
-import type { AppProps } from 'next/app'
-
-export default function MyApp({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   // Redirect 'http' to 'https' if needed
   if (typeof window !== 'undefined') {
-    const httpTokens: string[] | null = /^http:\/\/(.*)$/.exec(
-      window.location.href
-    )
-    const isDev = window.location.hostname === 'localhost'
+    const httpTokens: string[] | null = /^http:\/\/(.*)$/.exec(window.location.href);
+    const isDev = window.location.hostname === 'localhost';
     if (!!httpTokens && !isDev) {
-      window.location.replace('https://' + httpTokens[1])
-      return <></>
+      window.location.replace('https://' + httpTokens[1]);
+      return <></>;
     }
   }
 
@@ -21,5 +17,5 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <Layout>
       <Component {...pageProps} />
     </Layout>
-  )
+  );
 }
