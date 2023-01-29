@@ -25,8 +25,8 @@ export default function Layout({ children }: LayoutProps) {
       </Head>
 
       <div className="min-h-screen">
-        <LayoutHeader />
-        <main className="py-28">{children}</main>
+        {/* <LayoutHeader /> */}
+        <main>{children}</main>
         <LayoutFooter />
       </div>
     </>
