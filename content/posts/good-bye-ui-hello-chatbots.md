@@ -2,7 +2,7 @@
 title: "Good Bye UI. Hello Chatbots!"
 date: 2016-02-08T02:06:36-03:00
 cover: "/assets/posts/good-bye-ui-hello-chatbots/cover.webp"
-draft: true
+draft: false
 ---
 
 I’ve been a _full-stack developer_ for 13 years. I made a lot of **APIs** and **UIs** over these years, but I’ve been feeling kind of tired of doing always the same. So I thought of trying something new.

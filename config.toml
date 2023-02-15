@@ -2,6 +2,9 @@ baseURL = 'https://colkito.xyz/'
 languageCode = 'en-us'
 title = 'colkito.xyz'
 
+# set relativeURLs to true if you're deploying to IPFS or IPNS
+relativeURLs=true
+
 theme = "hello-friend"
 paginate = 5
 
