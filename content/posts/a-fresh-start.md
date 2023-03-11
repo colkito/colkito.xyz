@@ -1,7 +1,6 @@
 ---
-title: 'Hello There'
-date: 2013-02-15T01:55:55-03:00
-cover: '/assets/posts/hello-world/cover.jpg'
+title: 'A Fresh Start'
+date: 2023-03-10T21:38:53-03:00
 draft: true
 ---
 
