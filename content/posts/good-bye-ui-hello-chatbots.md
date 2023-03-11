@@ -1,7 +1,7 @@
 ---
-title: "Good Bye UI. Hello Chatbots!"
+title: 'Good Bye UI. Hello Chatbots!'
 date: 2016-02-08T02:06:36-03:00
-cover: "/assets/posts/good-bye-ui-hello-chatbots/cover.webp"
+cover: '/assets/posts/good-bye-ui-hello-chatbots/cover.webp'
 draft: false
 ---
 
