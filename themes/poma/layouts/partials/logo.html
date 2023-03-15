@@ -1,0 +1,17 @@
+<a
+  href="{{ if .Site.Params.Logo.Link }}{{ .Site.Params.Logo.Link }}{{ else }}{{ .Site.BaseURL }}{{ end }}"
+  class="logo"
+  style="text-decoration: none"
+>
+  <!-- // If the logo is an image, use it  -->
+  {{ if .Site.Params.Logo.Path }}
+  <img src="{{ .Site.Params.Logo.Path }}" alt="{{ .Site.Params.Logo.Alt }}" />
+  <!-- // Otherwise, use the default logo  -->
+  {{ else }}
+  <!-- // <span class="logo__mark">{{ partial "greater-icon.html" . }}</span>  -->
+  <span class="logo__text">
+    {{ with .Site.Params.Logo.Text }}{{ . }}{{ else }}hello friend{{ end }}
+  </span>
+  <span class="logo__cursor"></span>
+  {{ end }}
+</a>

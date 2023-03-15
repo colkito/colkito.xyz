@@ -1,6 +1,7 @@
 baseURL = 'https://colkito.xyz/'
 languageCode = 'en-us'
 title = 'colkito.xyz'
+subtitle = 'subtitles'
 
 # set relativeURLs to true if you're deploying to IPFS or IPNS
 relativeURLs=true
@@ -49,10 +50,9 @@ paginate = 5
     # lastModDisplay = ""
 
     [languages.en.params.logo]
-      logoText = "colkito.xyz"
-      logoHomeLink = "/"
+      text = "colkito.xyz"
+      link = "/"
       # or
-      #
       path = "/assets/picture.jpg"
       alt = "colkito.xyz"
 
