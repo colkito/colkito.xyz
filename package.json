@@ -1,0 +1,28 @@
+{
+  "name": "colkito.xyz",
+  "version": "1.0.0",
+  "description": "Decentralized personal Web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "postcss assets/css/main.css -o static/css/main.css"
+  },
+  "keywords": [
+    "ipfs",
+    "ipns",
+    "decentralized",
+    "personal",
+    "web",
+    "website",
+    "blog",
+    "stories"
+  ],
+  "author": "",
+  "dependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "tailwindcss": "^3.2.7"
+  },
+  "license": "MIT"
+}

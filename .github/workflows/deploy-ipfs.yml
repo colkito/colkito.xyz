@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy-ipfs:
+  deploy:
     name: Deploy to IPFS
     runs-on: ubuntu-latest
     concurrency:
@@ -16,14 +16,25 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          submodules: recursive # Fetch the Docsy theme
+          submodules: recursive
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Node.js setup
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build and optimize the code
+        run: npm run build
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.110.0'
-          extended: true
+          hugo-version: "0.110.0"
+          # extended: true
 
       - name: Build and optimize the code
         run: hugo -D --minify
