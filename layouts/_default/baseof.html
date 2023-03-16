@@ -16,5 +16,7 @@
     <main class="container mx-auto px-4 py-8">
       {{ block "main" . }}{{ end }}
     </main>
+
+    {{ block "footer" . }} {{ partial "footer.html" . }} {{ end }}
   </body>
 </html>
