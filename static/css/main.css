@@ -445,6 +445,9 @@ video {
 .mb-8{
   margin-bottom: 2rem;
 }
+.mr-4{
+  margin-right: 1rem;
+}
 .block{
   display: block;
 }
@@ -508,6 +511,9 @@ video {
 .bg-clip-text{
   -webkit-background-clip: text;
           background-clip: text;
+}
+.p-4{
+  padding: 1rem;
 }
 .px-4{
   padding-left: 1rem;
