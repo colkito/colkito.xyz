@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {{ partial "head.html" . }} {{ block "title" . }}
+    {{ block "head" . }} {{ partial "head.html" . }} {{ end }} {{ block "title"
+    . }}
     <title>{{ .Site.Title }}</title>
     {{ end }}
   </head>
-  <body class="bg-gray-100 min-h-screen">
-    <header class="bg-white shadow">
-      <div class="container mx-auto px-4 py-2">
-        <h1 class="text-xl font-semibold">{{ .Site.Title }}</h1>
-      </div>
-    </header>
+
+  <body class="bg-indigo-900 text-indigo-100 min-h-screen">
+    {{ block "header" . }} {{ partial "header.html" . }} {{ end }}
 
     <main class="container mx-auto px-4 py-8">
-      {{ block "main" . }}{{ end }}
+      {{ block "main" . }} {{ end }}
     </main>
 
-    {{ block "footer" . }} {{ partial "footer.html" . }} {{ end }}
+    {{ partialCached "footer.html" . }}
   </body>
 </html>
