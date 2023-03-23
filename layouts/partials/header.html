@@ -1,7 +1,18 @@
 <header
-  class="sticky top-0 z-30 bg-skin-fill bg-opacity-60 backdrop-filter firefox:bg-opacity-90 backdrop-blur-xl"
+  class="sticky top-0 z-30 bg-skin-fill bg-opacity-60 firefox:bg-opacity-90 backdrop-filter backdrop-blur-xl"
 >
-  <div class="flex mx-auto px-4 py-2">
-    <h1 class="text-xl font-semibold">{{ .Site.Title }}</h1>
+  <div class="flex mx-auto px-4 py-4">
+    <a
+      href="{{ .Site.BaseURL }}"
+      class="flex items-center text-skin-base hover:text-skin-accent"
+      title="{{ .Site.Title }}"
+    >
+      <img
+        src="/images/picture.jpg"
+        class="object-cover w-8 h-8 rounded-full"
+        alt="{{ .Site.Title }}"
+      />
+      {{/* <span class="ml-2 font-bold text-xl">{{ .Site.Title }}</span> */}}
+    </a>
   </div>
 </header>
