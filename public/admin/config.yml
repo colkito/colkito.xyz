@@ -1,6 +1,5 @@
 backend:
   name: git-gateway
-  # name: test-repo
   branch: main # Branch to update (optional; defaults to main)
 
 media_folder: public/img
@@ -18,13 +17,14 @@ collections:
           - { label: 'Publish Date', name: 'date', widget: 'datetime' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
 
-  - name: 'story'
+  - name: 'stories'
     label: 'Stories'
     folder: 'content/stories'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}-{{second}}'
     fields:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'story' }
+      - { label: 'Title', name: 'title', widget: 'hidden' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
 
@@ -34,7 +34,7 @@ collections:
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'blog' }
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
