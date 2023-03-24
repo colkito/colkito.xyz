@@ -22,10 +22,9 @@ collections:
     label: 'Stories'
     folder: 'content/stories'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}-{{second}}-{{slug}}'
+    slug: '{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}-{{second}}'
     fields:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'story' }
-      - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
 
