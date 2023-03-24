@@ -1,8 +1,0 @@
-/* Import FontAwesome */
-/* @import url("https://use.fontawesome.com/releases/v5.15.3/css/all.css"); */
-@import "./_fontawesome.css";
-
-/* Setup Tailwind */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
