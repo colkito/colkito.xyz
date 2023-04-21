@@ -15,19 +15,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/node": "^18.15.6",
-    "@types/react": "^18.0.28",
+    "@types/node": "^18.15.12",
+    "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
-    "eslint": "^8.36.0",
-    "eslint-config-next": "^13.2.4",
-    "next": "^13.2.4",
+    "eslint": "^8.38.0",
+    "eslint-config-next": "^13.3.0",
+    "next": "^13.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.4"
   },
   "license": "MIT",
   "devDependencies": {
     "eslint-config-prettier": "^8.8.0",
-    "prettier": "^2.8.6"
+    "prettier": "^2.8.7"
   }
 }
